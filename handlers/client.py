@@ -3,6 +3,7 @@ from create_bot import dp, bot
 from keyboards import kb_client
 from data_base import sqlite_db
 
+
 # @dp.message_handler(commands=['start', 'help'])
 async def command_start(message: types.Message):
     try:
@@ -25,8 +26,6 @@ async def command_gloryofnation(message: types.Message):
 # @dp.message_handler(commands=['Меню'])
 async def menu_command(message: types.Message):
     await sqlite_db.sql_read(message)
-
-
 
 
 def register_handlers_client(dp: Dispatcher):
